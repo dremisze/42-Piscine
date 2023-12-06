@@ -1,47 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dremisze <dremisze@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 21:48:12 by dremisze          #+#    #+#             */
-/*   Updated: 2023/12/06 13:17:02 by dremisze         ###   ########.fr       */
+/*   Created: 2023/12/06 18:58:01 by dremisze          #+#    #+#             */
+/*   Updated: 2023/12/06 19:28:42 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_fibonacci(int index)
+int	ft_is_prime(int nb)
 {
-	if (index < 0)
-	{
-		return (-1);
-	}
-	else if (index == 0)
+	int	i;
+
+	if (nb == 1 || nb == 0)
 	{
 		return (0);
 	}
-	else if (index == 1)
+	i = 2;
+	while (i * i <= nb)
 	{
-		return (1);
+		if (nb % i == 0)
+		{
+			return (0);
+		}
+		i++;
 	}
-	else
-	{
-		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
-	}
+	return (1);
 }
 /*
 #include <stdio.h>
-#include <stdlib.h>
 
-int main(int argc, char *argv[])
+i#include <stdio.h>
+
+int main()
 {
-	 if (argc != 2)
+    int nb;
+	nb = 3;
+    if (ft_is_prime(nb))
     {
-		printf("Uzycie: %s <index>\n", argv[0]);
-		return (1);
+        printf("Liczba %d jest liczba pierwsza\n", nb);
     }
-	int index = atoi (argv[1]);
-	printf("Ciag fibonacci wynosi %d\n", ft_fibonacci(index));
-	return (0);
+    else
+    {
+        printf("Liczba %d nie jest liczba pierwsza\n", nb);
+    }
+    return 0;
 }
 */
