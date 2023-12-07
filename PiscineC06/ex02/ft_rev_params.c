@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dremisze <dremisze@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 21:28:09 by dremisze          #+#    #+#             */
-/*   Updated: 2023/12/07 22:03:58 by dremisze         ###   ########.fr       */
+/*   Created: 2023/12/07 23:25:28 by dremisze          #+#    #+#             */
+/*   Updated: 2023/12/07 23:48:59 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,19 @@
 int	main(int argc, char *argv[])
 {
 	int	i;
+	int	j;
 
-	i = 0;
-	if (argc > 0)
+	i = argc - 1;
+	while (i > 0)
 	{
-		while (argv[0][i] != '\0')
+		j = 0;
+		while (argv[i][j] != '\0')
 		{
-			write(1, &argv[0][i], 1);
-			i++;
+			write(1, &argv[i][j], 1);
+			j++;
 		}
 		write(1, "\n", 1);
+		i--;
 	}
 	return (0);
 }
