@@ -16,19 +16,19 @@ void ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
-char rot_13(char c)//funkcja do szyfrowania znaku przy uzyciu metodu ROT13
+char rot_13(char c)
 {
-	if ((c >= 'a' && c <= 'm') || ( c >= 'A' && c <= 'M'))//spr. czy znak c jest litera z 1-ej polowy alfabetu
+	if ((c >= 'a' && c <= 'm') || ( c >= 'A' && c <= 'M'))
 	{
-		return (c + 13);//przesun litere o 13 miejsc w gore w alfabecie
+		return (c + 13);
 	}
-	else if ((c >= 'n' && c <= 'z') || ( c >= 'N' && c <= 'Z'))//spr czy z drgiej polowy alfabetu
+	else if ((c >= 'n' && c <= 'z') || ( c >= 'N' && c <= 'Z'))
 	{
-		return (c - 13);//przesun o 13 w dol
+		return (c - 13);
 	}
 	else
 	{
-		return (c);//jesli c nie jest litera, zwroc bez zmian
+		return (c);
 	}
 }
 
