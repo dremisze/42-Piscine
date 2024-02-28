@@ -6,7 +6,7 @@
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:54:52 by dremisze          #+#    #+#             */
-/*   Updated: 2024/02/27 21:48:43 by dremisze         ###   ########.fr       */
+/*   Updated: 2024/02/28 10:37:27 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <strings.h>
-#include <cstring>
+#include <string.h>
+//#include <cstring>
 
 #define MAGENTA "\x1b[35m"
 #define GREEN "\x1b[32m"
@@ -126,7 +127,7 @@ void test_ft_isascii()
 }
 void test_ft_isprint()
 {
-	int a = 'a';
+	int a = '\t';
 	int original = isprint(a) > 0;
 	int my = ft_isprint(a);
 	printf(MAGENTA "ft_isprint (%c) " RESET "%s\n", a, (original == my) ? GREEN "SUCCESS" : RED "FAIL");
@@ -137,6 +138,7 @@ void test_ft_isprint()
 	printf(MAGENTA "ft_isprint (%c) " RESET "%s\n", b, (original == my) ? GREEN "SUCCESS" : RED "FAIL");
 	puts("");
 }
+/*
 void test_ft_memcpy()
 {
 	char tab1[] = "Hello";
@@ -144,7 +146,7 @@ void test_ft_memcpy()
 	int a = 2;
 	int original = memcpy 
 }
-
+*/
 
 int main()
 {
@@ -155,7 +157,7 @@ int main()
 	test_ft_isalpha();
 	test_ft_isascii();
 	test_ft_isprint();
-	test_ft_memcpy();
+	//test_ft_memcpy();
 
 	return 0;
 }

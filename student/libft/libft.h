@@ -6,7 +6,7 @@
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:23:12 by dremisze          #+#    #+#             */
-/*   Updated: 2024/02/27 20:40:27 by dremisze         ###   ########.fr       */
+/*   Updated: 2024/02/28 12:44:20 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 #include <stdlib.h>
 #include <unistd.h>
+/*
+typedef struct	s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+*/
 
 int			ft_toupper(int i);
 int			ft_tolower(int i);
@@ -37,5 +44,28 @@ void		ft_bzero(void *s, size_t n);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
 // ft_memchr
 // ft_memcmp
+// ft_calloc
+// ft_strdup
+// ADDITIONAL FUNCTION
+// ft_substr
+// ft_strjoin
+// ft_strtrim
+// ft_split
+// ft_itoa
+// ft_strmapi
+// ft_striteri
+// ft_putchar_fd
+// ft_putstr_fd
+// ft_putnbr_fd
+// BONUS
+// ft_lstnew
+// ft_lstadd_front
+// ft_lstsize
+// ft_lstlast
+// ft_lstadd_back
+// ft_lstdelone
+// ft_lstclear
+// ft_lstiter
+// ft_lstmap
 
 #endif 

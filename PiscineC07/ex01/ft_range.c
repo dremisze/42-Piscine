@@ -12,17 +12,17 @@
 
 #include <stdlib.h>
 
-int *ft_range(int min, int max)
+int	*ft_range(int min, int max)
 {
-	int i;
-	int *tab;
+	int	i;
+	int	*tab;
 
 	i = 0;
 	if (min >= max)
 	{
 		return (NULL);
 	}
-	tab = (int *)malloc(sizeof(int) * (max - min));	
+	tab = (int *)malloc(sizeof(int) * (max - min));
 	if (tab == NULL)
 	{
 		return (NULL);
@@ -35,7 +35,7 @@ int *ft_range(int min, int max)
 	}
 	return (tab);
 }
-/*
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -68,4 +68,4 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-*/
+
