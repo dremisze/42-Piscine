@@ -6,7 +6,7 @@
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:54:52 by dremisze          #+#    #+#             */
-/*   Updated: 2024/02/28 10:37:27 by dremisze         ###   ########.fr       */
+/*   Updated: 2024/02/28 18:54:56 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@
 #include <stdio.h>
 #include <strings.h>
 #include <string.h>
-//#include <cstring>
 
 #define MAGENTA "\x1b[35m"
 #define GREEN "\x1b[32m"
 #define RED "\x1b[31m"
 #define RESET "\x1b[0m"
-
+/*
 void test_ft_isdigit()
 {
 	int a = 'a';
@@ -72,7 +71,6 @@ void print_bytes_as_hex(char *str, size_t len)
 	}
 	puts("");
 }
-
 void test_ft_bzero()
 {
 	char str1[] = "abcdef";
@@ -138,26 +136,98 @@ void test_ft_isprint()
 	printf(MAGENTA "ft_isprint (%c) " RESET "%s\n", b, (original == my) ? GREEN "SUCCESS" : RED "FAIL");
 	puts("");
 }
-/*
 void test_ft_memcpy()
 {
-	char tab1[] = "Hello";
-	char tab2[] = "world";
-	int a = 2;
-	int original = memcpy 
+	char src[10] = "123456789";
+	char dest1[10];
+	char dest2[10];
+	memcpy(dest1, src, 10);
+	ft_memcpy(dest2, src, 10);
+	printf(MAGENTA "ft_memcpy " RESET "%s\n", (memcmp(dest1, dest2, 10) == 0) ? GREEN "SUCCESS" : RED "FAIL");
 }
-*/
+void test_ft_strlen()
+{
+	char str[20] = "123456789";
+	int original = strlen(str);
+	int my = ft_strlen(str);
+	printf(MAGENTA "ft_strlen " RESET "%s\n", (original == my) ? GREEN "SUCCESS" : RED "FAIL");
+}
+void test_ft_strncmp()
+{
+	char str[7] = "Warsaw";
+	char str2[7] = "Warsaw";
+	int original = strncmp(str, str2, 7);
+	int my = ft_strncmp(str, str2, 7);
+	printf(MAGENTA "ft_strncmp " RESET "%s\n", (original == my) ? GREEN "SUCCESS" : RED "FAIL");
+
+	char str3[7] = "Warsaw";
+	char str4[7] = "Warsaw";
+	original = strncmp(str3, str4, 4);
+	my = ft_strncmp(str3, str4, 4);
+	printf(MAGENTA "ft_strncmp " RESET "%s\n", (original == my) ? GREEN "SUCCESS" : RED "FAIL");
+}
+void test_ft_strnstr()
+{
+	char str1[10] = "Warsaw";
+	char str2[10] = "Warsaw";
+	char result[10] = "Warsaw";
+	printf(MAGENTA "ft_strnstr " RESET "%s\n", ((strcmp(result, ft_strnstr(str1, str2, 10))) == 0) ? GREEN "SUCCESS" : RED "FAIL");
+
+}
+void test_ft_tolower()
+{
+	int a = 'a';
+	int original = tolower(a);
+	int my = ft_tolower(a);
+	printf(MAGENTA "ft_tolower " RESET "%s\n", (original == my) ? GREEN "SUCCESS" : RED "FAIL");
+}
+void test_ft_toupper()
+{
+	int a = 'a';
+	int original = toupper(a);
+	int my = ft_toupper(a);
+	printf(MAGENTA "ft_toupper " RESET "%s\n", (original == my) ? GREEN "SUCCESS" : RED "FAIL");
+}
+void test_ft_strchr()
+{
+	char arr[] = "Hello";
+	int a = 'a';
+	char *orginal = strchr(arr, a);
+	char *my = ft_strchr(arr, a);
+	printf(MAGENTA "ft_strchr " RESET "%s\n", (orginal == my) ? GREEN "SUCCESS" : RED "FAIL"); 
+}
+*/void test_ft_strrchr()
+{
+	char tab[] = "Hello";
+	int i = 'a';
+	char *original = strrchr(tab, i);
+	char *my = ft_strrchr(tab, i);
+	printf(MAGENTA "ft_strrchr " RESET "%s\n", (original == my) ? GREEN "SUCCESS" : RED "FAIL");
+}
 
 int main()
 {
-	test_ft_isdigit();
+	/*test_ft_isdigit();
 	test_ft_atoi();
 	test_ft_bzero();
 	test_ft_isalnum();
 	test_ft_isalpha();
 	test_ft_isascii();
 	test_ft_isprint();
-	//test_ft_memcpy();
+	test_ft_memcpy();
+	// test_ft_memchr();
+	// test_ft_memcmp();
+	// test_ft_memset();
+	// test_ft_strlcat();
+	test_ft_strlen();
+	test_ft_strncmp();
+	test_ft_strnstr();
+	test_ft_tolower();
+	test_ft_toupper();
+	test_ft_strchr();*/
+	test_ft_strrchr();
+	
+	
 
 	return 0;
 }

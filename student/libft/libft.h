@@ -6,15 +6,15 @@
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:23:12 by dremisze          #+#    #+#             */
-/*   Updated: 2024/02/28 12:44:20 by dremisze         ###   ########.fr       */
+/*   Updated: 2024/02/28 18:48:36 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdlib.h>
-#include <unistd.h>
+# include <stdlib.h>
+# include <unistd.h>
 /*
 typedef struct	s_list
 {
@@ -36,9 +36,9 @@ int			ft_atoi(char *str);
 char		*ft_strnstr(const char *big, const char *litlle, unsigned int len);
 char		*ft_strcpy(char *dest, char *src);
 void		ft_bzero(void *s, size_t n);
-// ft_strrchr
+char		*ft_strrchr(const char *str, int ch);
 // ft_strlcat
-// ft_strchr
+char		*ft_strchr(const char *str, int z);
 // ft_memset
 // ft_memmove
 void		*ft_memcpy(void *dest, const void *src, size_t n);

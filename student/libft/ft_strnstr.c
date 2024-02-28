@@ -6,11 +6,11 @@
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 21:21:30 by dremisze          #+#    #+#             */
-/*   Updated: 2024/02/26 21:42:28 by dremisze         ###   ########.fr       */
+/*   Updated: 2024/02/28 15:51:53 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *litlle, unsigned int len)
 {

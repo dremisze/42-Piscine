@@ -6,7 +6,7 @@
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 15:41:34 by dremisze          #+#    #+#             */
-/*   Updated: 2024/02/27 17:18:57 by dremisze         ###   ########.fr       */
+/*   Updated: 2024/02/28 18:04:09 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char *tmp_dst;
-	unsigned char *tmp_src;
+	unsigned char	*tmp_dst;
+	unsigned char	*tmp_src;
 
 	if (!dest && !src)
 	{
@@ -23,7 +23,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	tmp_dst = (unsigned char *) dest;
 	tmp_src = (unsigned char *) src;
-
 	while (n > 0)
 	{
 		*(tmp_dst++) = *(tmp_src++);
