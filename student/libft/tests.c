@@ -6,7 +6,7 @@
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:54:52 by dremisze          #+#    #+#             */
-/*   Updated: 2024/02/28 22:42:38 by dremisze         ###   ########.fr       */
+/*   Updated: 2024/02/29 17:45:42 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,7 @@ void test_ft_strnstr()
 	char str1[10] = "Warsaw";
 	char str2[10] = "Warsaw";
 	char result[10] = "Warsaw";
-	printf(MAGENTA "ft_strnstr " RESET "%s\n", ((strcmp(result, ft_strnstr(str1, str2, 10))) == 0) ? GREEN "SUCCESS" : RED "FAIL");
+	printf(MAGENTA "ft_strnstr " RESET "%s\n", strcmp(result, ft_strnstr(str1, str2, 10)) == 0 ? GREEN "SUCCESS" : RED "FAIL");
 
 }
 void test_ft_tolower()
@@ -205,6 +205,14 @@ void test_ft_strrchr()
 	printf(MAGENTA "ft_strrchr " RESET "%s\n", (original == my) ? GREEN "SUCCESS" : RED "FAIL");
 }
 */
+void	test_ft_strlcat()
+{
+	int i = 30;
+	char dtab1[30] = "42 ";
+	char stab2[7] = "Warsaw";
+	size_t dtab_stab = strlen(dtab1) + strlen(stab2);
+	printf(MAGENTA "ft_strlcat " RESET "%s\n", ft_strlcat(dtab1, stab2, i) == dtab_stab ? GREEN "SUCCESS" : RED "FAIL");
+}
 int main()
 {
 	/*test_ft_isdigit();
@@ -218,7 +226,6 @@ int main()
 	// test_ft_memchr();
 	// test_ft_memcmp();
 	// test_ft_memset();
-	// test_ft_strlcat();
 	test_ft_strlen();
 	test_ft_strncmp();
 	test_ft_strnstr();
@@ -226,6 +233,7 @@ int main()
 	test_ft_toupper();
 	test_ft_strchr();
 	test_ft_strrchr();*/
+	test_ft_strlcat();
 
 	return 0;
 }

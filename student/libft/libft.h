@@ -6,7 +6,7 @@
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:23:12 by dremisze          #+#    #+#             */
-/*   Updated: 2024/02/28 22:42:40 by dremisze         ###   ########.fr       */
+/*   Updated: 2024/02/29 14:36:11 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct	s_list
 int			ft_toupper(int i);
 int			ft_tolower(int i);
 int			ft_strncmp(char *s1, char *s2, unsigned int n);
-int			ft_strlen(const char *str);
+size_t		ft_strlen(const char *str);
 int			ft_isprint(int i);
 int			ft_isdigit(int i);
 int			ft_isascii(int i);
@@ -37,7 +37,7 @@ char		*ft_strnstr(const char *big, const char *litlle, unsigned int len);
 char		*ft_strcpy(char *dest, char *src);
 void		ft_bzero(void *s, size_t n);
 char		*ft_strrchr(const char *str, int ch);
-// ft_strlcat
+size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 char		*ft_strchr(const char *str, int z);
 // ft_memset
 // ft_memmove

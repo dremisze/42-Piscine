@@ -6,39 +6,54 @@
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 17:29:46 by dremisze          #+#    #+#             */
-/*   Updated: 2024/02/28 22:42:41 by dremisze         ###   ########.fr       */
+/*   Updated: 2024/02/29 18:48:09 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+
+size_t	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int	len_dst;
-	int	len_src;
-	int i;
+	size_t	len_dst;
+	size_t	len_src;
+	size_t	i;
 
 	i = 0;
 	len_dst = ft_strlen(dst);
 	len_src = ft_strlen(src);
-	if (len_dst >= dstsize)
-		return (len_dst + len_src);
-	if (len_src < dstsize - len_dst)
+	if (dstsize < len_dst + 1)
+		return (dstsize + len_src);
+	if (dstsize > len_dst + 1)
 	{
-		while (src[i] != '\0')
+		while (src[i] != '\0' && len_dst + 1 + i < dstsize)
 		{
 			dst[len_dst + i] = src[i];
 			i++;
 		}
-		//dst[len_dst + i + 1] = '\0'
 	}
+	dst[len_dst + i] = '\0';
+	printf("%s\n", dst);
 	return (len_dst + len_src);
 }
+
+
 int main()
 {
-	char tab[100] = "Warsaw";
-	char tab2[3] = "42";
-	int a = 50;
-	ft_strlcat(tab, tab2, a);
-	
+	int i = 30;
+	char dtab1[4] = "42 ";
+	char stab2[7] = "Warsaw";
+	ft_strlcat(dtab1, stab2, i);
 }
