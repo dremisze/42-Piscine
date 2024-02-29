@@ -6,7 +6,7 @@
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:23:12 by dremisze          #+#    #+#             */
-/*   Updated: 2024/02/29 14:36:11 by dremisze         ###   ########.fr       */
+/*   Updated: 2024/02/29 21:27:11 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ void		ft_bzero(void *s, size_t n);
 char		*ft_strrchr(const char *str, int ch);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 char		*ft_strchr(const char *str, int z);
-// ft_memset
+void		*ft_memset(void *b, int c, size_t len);
+// ft_memchr
 // ft_memmove
 void		*ft_memcpy(void *dest, const void *src, size_t n);
-// ft_memchr
 // ft_memcmp
 // ft_calloc
 // ft_strdup
