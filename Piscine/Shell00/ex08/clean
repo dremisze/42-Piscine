@@ -1,0 +1,2 @@
+find . \( -iname '*~' -o -iname '\#*\#' \) -type f -print -delete
+
