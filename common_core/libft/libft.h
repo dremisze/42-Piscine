@@ -6,7 +6,7 @@
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:23:12 by dremisze          #+#    #+#             */
-/*   Updated: 2024/03/03 12:40:39 by dremisze         ###   ########.fr       */
+/*   Updated: 2024/03/06 17:25:02 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char		*ft_strrchr(const char *str, int ch);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 char		*ft_strchr(const char *str, int z);
 void		*ft_memset(void *b, int c, size_t len);
-// ft_strlcpy
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 // ft_memchr
 void		*ft_memmove(void *dst, const void *src, size_t len);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
