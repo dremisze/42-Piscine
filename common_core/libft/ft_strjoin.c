@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 15:17:19 by dremisze          #+#    #+#             */
-/*   Updated: 2024/03/22 12:54:39 by dremisze         ###   ########.fr       */
+/*   Created: 2024/03/22 19:14:51 by dremisze          #+#    #+#             */
+/*   Updated: 2024/03/22 20:07:38 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int i)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	if ((ft_isalpha(i) || ft_isdigit(i)))
-	{
-		return (1);
-	}
-	return (0);
+	int		i;
+	int		j;
+	char	*new;
+
+	i = 0;
+	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	new = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!new)
+		return (NULL);
+	while (s1[i] != '\0')
+		new[j++] = s1[i++];
+	i = 0;
+	while (s2[i] != '\0')
+		new[j++] = s2[i++];
+	new[j] = 0;
+	return (new);
 }

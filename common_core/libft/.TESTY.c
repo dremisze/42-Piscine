@@ -6,7 +6,7 @@
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:54:52 by dremisze          #+#    #+#             */
-/*   Updated: 2024/03/06 17:32:12 by dremisze         ###   ########.fr       */
+/*   Updated: 2024/03/22 20:28:25 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void test_ft_isdigit()
 	original = isdigit(b) > 0;
 	my = ft_isdigit(b);
 	printf(MAGENTA "ft_isdigit (%c) " RESET "%s\n", b, (original == my) ? GREEN "SUCCESS" : RED "FAIL");
+	puts("");
 }
 void test_ft_atoi()
 {
@@ -77,9 +78,10 @@ void test_ft_bzero()
 	bzero(str1, 1);
 	printf(MAGENTA "After bzero: " RESET "%s\n", str1);
 	print_bytes_as_hex(str1, sizeof(str1));
-
+	puts("");
+	
 	char str2[] = "abcdef";
-	ft_bzero(str2, 2);
+	ft_bzero(str2, 1);
 	printf(MAGENTA "After ft_bzero: " RESET "%s\n", str2);
 	print_bytes_as_hex(str2, sizeof(str2));
 	puts("");
@@ -161,7 +163,6 @@ void test_ft_strncmp()
 	int original = strncmp(str, str2, 2);
 	int my = ft_strncmp(str, str2, 2);
 	printf(MAGENTA "ft_strncmp " RESET "%s\n", (original == my) ? GREEN "SUCCESS" : RED "FAIL");
-	puts("");
 
 	char str3[10] = "Warsa\\0w";
 	char str4[10] = "Warsa\\2w";
@@ -202,7 +203,6 @@ void test_ft_strchr()
 	char *orginal = strchr(arr, a);
 	char *my = ft_strchr(arr, a);
 	printf(MAGENTA "ft_strchr " RESET "%s\n", (orginal == my) ? GREEN "SUCCESS" : RED "FAIL"); 
-	puts("");
 
 	
 	char str1[] = "Hello, World!";
@@ -210,28 +210,24 @@ void test_ft_strchr()
 	char *original1 = strchr(str1, ch1);
 	char *mine1 = ft_strchr(str1, ch1);
 	printf(MAGENTA "ft_strchr Test 1: " RESET "%s\n", (original1 == mine1) ? GREEN "SUCCESS" : RED "FAIL"); 
-	puts("");
 
 	char str2[] = "Hello, World!";
 	char ch2 = 'x';
 	char *original2 = strchr(str2, ch2);
 	char *mine2 = ft_strchr(str2, ch2);
 	printf(MAGENTA "ft_strchr Test 2: " RESET "%s\n", (original2 == mine2) ? GREEN "SUCCESS" : RED "FAIL"); 
-	puts("");
 
 	char str3[] = "Hello, World!";
 	char ch3 = 'H';
 	char *original3 = strchr(str3, ch3);
 	char *mine3 = ft_strchr(str3, ch3);
 	printf(MAGENTA "ft_strchr Test 3: " RESET "%s\n", (original3 == mine3) ? GREEN "SUCCESS" : RED "FAIL"); 
-	puts("");
 
 	char str4[] = "Hello, World!";
 	char ch4 = '\0';
 	char *original4 = strchr(str4, ch4);
 	char *mine4 = ft_strchr(str4, ch4);
 	printf(MAGENTA "ft_strchr Test 4: " RESET "%s\n", (original4 == mine4) ? GREEN "SUCCESS" : RED "FAIL"); 
-	puts("");
 
 	char str5[] = "";
 	char ch5 = 'H';
@@ -256,7 +252,6 @@ void	test_ft_strlcat()
 	char stab2[7] = "Warsaw";
 	size_t dtab_stab = strlen(dtab1) + strlen(stab2);
 	printf(MAGENTA "ft_strlcat " RESET "%s\n", ft_strlcat(dtab1, stab2, i) == dtab_stab ? GREEN "SUCCESS" : RED "FAIL");
-	puts("");
 	
 	i = 6;
 	char dtab3[30] = "42 ";
@@ -284,7 +279,6 @@ void test_ft_memmove()
 	memmove(dest1, src, i);
 	ft_memmove(dest2, src, i);
 	printf(MAGENTA "ft_memmove " RESET "%s\n", memcmp(dest1, dest2, 10) == 0 ? GREEN "SUCCESS" : RED "FAIL");
-	puts("");
 	
 	char overlap_src[15] = "Hello, World!";
 	char overlap_dst1[15] = "Hello, World!";
@@ -293,7 +287,6 @@ void test_ft_memmove()
 	memmove(overlap_dst1 + 2 , overlap_src + 4, n_overlap1);
 	ft_memmove(overlap_dst2 + 2 , overlap_src + 4, n_overlap1);
 	printf(MAGENTA "ft_memmove " RESET "%s\n", memcmp(overlap_dst1, overlap_dst2, 15) == 0 ? GREEN "SUCCESS" : RED "FAIL");
-	puts("");
 
 	char overlap_src2[15] = "Goodbye, Earth!";
 	char dest_overlap3[15] = "Goodbye, Earth!";
@@ -302,7 +295,6 @@ void test_ft_memmove()
 	memmove(dest_overlap3 + 4, overlap_src2 + 2, n_overlap2);
 	ft_memmove(dest_overlap4 + 4, overlap_src2 + 2, n_overlap2);
 	printf(MAGENTA "ft_memmove " RESET "%s\n", memcmp(dest_overlap3, dest_overlap4, 15) == 0 ? GREEN "SUCCESS" : RED "FAIL");
-	puts("");
 
 	char big_src[1000];
 	memset(big_src, 'A', sizeof(big_src));
@@ -325,24 +317,106 @@ void test_ft_strlcpy()
     ret1 = strlcpy(dest1, src, len);
     ret2 = ft_strlcpy(dest2, src, len);
     printf(MAGENTA "ft_strlcpy " RESET "%s\n", (memcmp(dest1, dest2, len) == 0 && ret1 == ret2) ? GREEN "SUCCESS" : RED "FAIL");
-    puts("");
 
     ret1 = strlcpy(dest1, src, 0);
     ret2 = ft_strlcpy(dest2, src, 0);
     printf(MAGENTA "ft_strlcpy " RESET "%s\n", ret1 == ret2 ? GREEN "SUCCESS" : RED "FAIL");
-    puts("");
 
     len = strlen(src) + 1;
     ret1 = strlcpy(dest1, src, len);
     ret2 = ft_strlcpy(dest2, src, len);
     printf(MAGENTA "ft_strlcpy " RESET "%s\n", (memcmp(dest1, dest2, len) == 0 && ret1 == ret2) ? GREEN "SUCCESS" : RED "FAIL");
-    puts("");
 
     len = sizeof(src) + 10; 
     ret1 = strlcpy(dest1, src, len);
     ret2 = ft_strlcpy(dest2, src, len);
     printf(MAGENTA "ft_strlcpy " RESET "%s\n", (memcmp(dest1, dest2, strlen(src) + 1) == 0 && ret1 == ret2) ? GREEN "SUCCESS" : RED "FAIL");
     puts("");
+}
+void test_ft_memchr()
+{
+	char text[] = "42 Warsaw";
+	char find = 'a';
+	void *found;
+	void *found1;
+	found = ft_memchr(text, find, strlen(text));
+	found1 = memchr(text, find, strlen(text));
+	printf(MAGENTA "ft_memchr " RESET "%s\n", (found == found1) ? GREEN "SUCCESS" : RED "FAIL");
+	puts("");
+}
+void test_ft_memcmp()
+{
+	char text1[] = "42 Warsaw";
+	char text2[] = "";
+	int result1;
+	int result2;
+	result1 = ft_memcmp(text1, text2, strlen(text1));
+	result2 = memcmp(text1, text2, strlen(text1));
+	printf(MAGENTA "ft_memcmp " RESET "%s\n", (result1 == result2) ? GREEN "SUCCESS" : RED "FAIL");
+	puts("");
+}
+void test_ft_calloc()
+{
+	size_t count = 10;
+	size_t size = sizeof(int);
+	int *array1, *array2;
+	int is_equal = 1;
+	array1 = (int *)ft_calloc(count, size);
+	array2 = (int *)calloc(count, size);
+	if (!array1 || !array2)
+	{
+		printf(MAGENTA "ft_calloc " RED "FAIL: Allocation error\n");
+		free(array1);
+		free(array2);
+		return;
+	}
+	for (size_t i = 0; i < count && is_equal; i++)
+	{
+		is_equal = (array1[i] == array2[i]) ? 1 : 0;
+	}
+	printf(MAGENTA "ft_calloc " RESET "%s\n", is_equal ? GREEN "SUCCESS" : RED "FAIL");
+    free(array1);
+    free(array2);
+    puts("");
+}
+void test_ft_strdup()
+{
+	char *str = "42 Warsaw";
+	char *original = strdup(str);
+	char *my = ft_strdup(str);
+	printf(MAGENTA "ft_strdup " RESET "%s\n", strcmp(original, my) == 0 ? GREEN "SUCCESS" : RED "FAIL");
+	free(original);
+	free(my);
+	puts("");
+}
+void test_ft_substr()
+{
+	char *str = "42 Warsaw";
+	int start = 3;
+	int len = 4;
+	char *expected = "Wars";
+	char *result = ft_substr(str, start, len);
+	printf(MAGENTA "ft_substr " RESET "%s\n", strcmp(expected, result) == 0 ? GREEN "SUCCESS" : RED "FAIL");
+	free(result);
+	puts("");
+}
+void test_ft_strjoin()
+{
+	char *s1 = "42 ";
+	char *s2 = "Warsaw";
+	char *expected = "42 Warsaw";
+	char *result = ft_strjoin(s1, s2);
+	printf(MAGENTA "ft_strjoin " RESET "%s\n", strcmp(expected, result) == 0 ? GREEN "SUCCESS" : RED "FAIL");
+	free(result);
+	puts("");
+
+	char *s3 = "42 ";
+	char *s4 = "";
+	char *expected2 = "42 ";
+	char *result2 = ft_strjoin(s3, s4);
+	printf(MAGENTA "ft_strjoin " RESET "%s\n", strcmp(expected2, result2) == 0 ? GREEN "SUCCESS" : RED "FAIL");
+	free(result2);
+	puts("");
 }
 
 int main()
@@ -356,10 +430,10 @@ int main()
 	test_ft_isascii();
 	test_ft_isprint();
 	test_ft_memcpy();
-	// ft_memchr();
-	// ft_memcmp();
-	// ft_calloc
-	// ft_strdup
+	test_ft_memchr();
+	test_ft_memcmp();
+	test_ft_calloc();
+	test_ft_strdup();
 	test_ft_strlcpy();
 	test_ft_strlen();
 	test_ft_strncmp();
@@ -372,8 +446,8 @@ int main()
 	test_ft_memset();
 	test_ft_memmove();
 	// ADDITIONAL FUNCTION
-	// ft_substr
-	// ft_strjoin
+	test_ft_substr();
+	test_ft_strjoin();
 	// ft_strtrim
 	// ft_split
 	// ft_itoa

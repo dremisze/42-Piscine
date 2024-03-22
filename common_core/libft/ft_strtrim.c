@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 15:17:19 by dremisze          #+#    #+#             */
-/*   Updated: 2024/03/22 12:54:39 by dremisze         ###   ########.fr       */
+/*   Created: 2024/03/22 20:41:38 by dremisze          #+#    #+#             */
+/*   Updated: 2024/03/22 21:01:00 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int i)
+static int ft_is_in_set(char c, const char *set)
 {
-	if ((ft_isalpha(i) || ft_isdigit(i)))
-	{
-		return (1);
-	}
-	return (0);
+	
 }

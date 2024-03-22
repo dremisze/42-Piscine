@@ -6,7 +6,7 @@
 /*   By: dremisze <dremisze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:23:12 by dremisze          #+#    #+#             */
-/*   Updated: 2024/03/06 19:01:53 by dremisze         ###   ########.fr       */
+/*   Updated: 2024/03/22 19:54:50 by dremisze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,15 @@ size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 char		*ft_strchr(const char *str, int z);
 void		*ft_memset(void *b, int c, size_t len);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
-void		*memchr(const void *s, int c, size_t n);
+void		*ft_memchr(const void *s, int c, size_t n);
 void		*ft_memmove(void *dst, const void *src, size_t len);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
-// ft_memcmp
-// ft_calloc
-// ft_strdup
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
+void		*ft_calloc(size_t count, size_t size);
+char		*ft_strdup(const char *s1);
 // ADDITIONAL FUNCTION
-// ft_substr
-// ft_strjoin
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_strjoin(char const *s1, char const *s2);
 // ft_strtrim
 // ft_split
 // ft_itoa
