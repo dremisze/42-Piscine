@@ -1,23 +1,25 @@
 {
-    "version": "2.0.0",
-    "tasks": [
+    "version": "0.2.0",
+    "configurations": [
         {
-            "label": "build current file",
-            "type": "shell",
-            "command": "gcc",
-            "args": [
-                "-g",
-                "${file}",
-                "-Wall",
-                "-Wextra",
-                "-Werror",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.out"
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
+            "preLaunchTask": "build current file"
         }
     ]
 }

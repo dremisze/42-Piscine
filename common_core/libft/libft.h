@@ -50,7 +50,7 @@ char		*ft_strdup(const char *s1);
 // ADDITIONAL FUNCTION
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(char const *s1, char const *s2);
-// ft_strtrim
+char		*ft_strtrim(char const *s1, char const *set);
 // ft_split
 // ft_itoa
 // ft_strmapi
